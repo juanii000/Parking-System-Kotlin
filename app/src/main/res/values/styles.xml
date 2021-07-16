@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ToolbarStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/teal_700</item>
+        <item name="android:title">@string/app_name</item>
+        <item name="android:titleTextColor">@color/white</item>
+    </style>
+    
+    <style name="ButtonMainPageStyle">
+        <item name="backgroundTint">@color/teal_700</item>
+        <item name="android:layout_margin">@dimen/margin_main_buttons</item>
+    </style>
+    
+    <style name="ButtonConfigureParkingSize" parent="ButtonMainPageStyle">
+        <item name="android:text">@string/button_configure_parking_size</item>
+    </style>
+
+</resources>

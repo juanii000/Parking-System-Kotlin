@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ParkingSystem-Kotlin</string>
+    <string name="button_configure_parking_size">configure parking size</string>
 </resources>

@@ -1,11 +1,15 @@
 package com.example.parkingsystem_kotlin.mvp.model
 
 import com.example.parkingsystem_kotlin.mvp.contract.ParkingContract
-import com.example.parkingsystem_kotlin.util.Constants.PARKING_SIZE
+import com.example.parkingsystem_kotlin.util.Constants
 
-class ParkingModel: ParkingContract.Model {
+class ParkingModel() : ParkingContract.Model {
 
-    private val parkingSize: Int = PARKING_SIZE
+    private var parkingSize: Int = Constants.PARKING_SIZE
+
+    override fun setParkingSize(parkingSize: Int) {
+        this.parkingSize = parkingSize
+    }
 
     override fun getParkingSize(): Int = parkingSize
 }

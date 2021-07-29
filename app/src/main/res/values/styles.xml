@@ -6,14 +6,15 @@
         <item name="android:title">@string/app_name</item>
         <item name="android:titleTextColor">@color/white</item>
     </style>
-    
-    <style name="ButtonMainPageStyle">
-        <item name="backgroundTint">@color/teal_700</item>
-        <item name="android:layout_margin">@dimen/margin_main_buttons</item>
+
+    <style name="TextStyleAllAppTitle">
+        <item name="android:textSize">@dimen/size_all_title_xbig</item>
+        <item name="android:textStyle">bold</item>
     </style>
-    
-    <style name="ButtonConfigureParkingSize" parent="ButtonMainPageStyle">
-        <item name="android:text">@string/button_configure_parking_size</item>
+
+    <style name="ButtonAllBaseStyle">
+        <item name="backgroundTint">@color/teal_700</item>
+        <item name="android:textSize">@dimen/size_all_text_on_button_xsmall</item>
     </style>
 
 </resources>

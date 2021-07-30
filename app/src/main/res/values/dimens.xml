@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_main_buttons">25dp</dimen>
+    <dimen name="margin_all_general_normal">25dp</dimen>
+    <dimen name="size_all_title_xbig">35sp</dimen>
+    <dimen name="padding_dialog_fragment_xsmall">10dp</dimen>
+    <dimen name="size_all_text_on_button_xsmall">12sp</dimen>
 </resources>

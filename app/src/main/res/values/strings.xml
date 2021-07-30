@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ParkingSystem-Kotlin</string>
-    <string name="button_configure_parking_size">configure parking size</string>
+    <string name="button_main_configure_parking_size">configure parking size</string>
+    <string name="button_dialog_parking_space_set_parking_size">set parking size</string>
+    <string name="button_dialog_parking_space_exit_parking_size">exit parking size</string>
+    <string name="title_all_parking_size">Parking Size</string>
+    <string name="input_dialog_parking_space_hint_insert_number">Insert a number</string>
+    <string name="toast_dialog_parking_space_wrong_input_msg">Please, insert a number between 0 and 9999</string>
 </resources>

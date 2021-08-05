@@ -12,9 +12,33 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextStyleParkingReservationActivityTitle" parent="TextStyleAllAppTitle">
+        <item name="android:background">@drawable/rounded_edges</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">@dimen/margin_all_general_normal</item>
+    </style>
+
+    <style name="EditTextStyleParkingReservationActivity">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_all_general_normal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
     <style name="ButtonAllBaseStyle">
         <item name="backgroundTint">@color/teal_700</item>
         <item name="android:textSize">@dimen/size_all_text_on_button_xsmall</item>
+        <item name="android:layout_margin">@dimen/margin_all_general_normal</item>
+    </style>
+
+    <style name="MySpinnerDatePickerStyle" parent="android:Theme.Material.Dialog">
+        <item name="android:datePickerStyle">@style/MySpinnerDatePicker</item>
+    </style>
+
+    <style name="MySpinnerDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
     </style>
 
 </resources>

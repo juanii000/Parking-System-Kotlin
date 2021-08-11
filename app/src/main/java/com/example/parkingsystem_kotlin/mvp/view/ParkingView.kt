@@ -2,7 +2,7 @@ package com.example.parkingsystem_kotlin.mvp.view
 
 import android.app.Activity
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
+import com.example.parkingsystem_kotlin.ParkingReservationActivity
 import com.example.parkingsystem_kotlin.fragment.ParkingSizeDialogFragment
 import com.example.parkingsystem_kotlin.mvp.contract.ParkingContract
 import com.example.parkingsystem_kotlin.mvp.view.base.ActivityView
@@ -12,6 +12,10 @@ class ParkingView(activity: Activity): ActivityView(activity), ParkingContract.V
 
     override fun showParkingSizeDialogFragment() {
         ParkingSizeDialogFragment().show(fragmentManager, Constants.TAG_PARKING_SIZE_DIALOG)
+    }
+
+    override fun showParkingReservationActivity() {
+        activity?.startActivity(context?.let { ParkingReservationActivity.getIntent(it) })
     }
 
     override fun showParkingSize(parkingSize: Int) {

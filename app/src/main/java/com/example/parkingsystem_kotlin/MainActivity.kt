@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity(), SpacesParkingDialogListener {
     }
 
     private fun setOnClickListeners() {
-        binding.buttonMainParkingSize.setOnClickListener {
-            presenter.onParkingSizeButtonPressed()
+        with(binding) {
+            buttonMainParkingSize.setOnClickListener { presenter.onParkingSizeButtonPressed() }
+            buttonMainParkingReservation.setOnClickListener { presenter.onParkingReservationButtonPressed() }
         }
     }
 

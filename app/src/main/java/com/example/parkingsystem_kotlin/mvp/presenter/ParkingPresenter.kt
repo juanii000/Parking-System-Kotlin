@@ -12,6 +12,10 @@ class ParkingPresenter(
         showParkingSizeToast()
     }
 
+    override fun onParkingReservationButtonPressed() {
+        view.showParkingReservationActivity()
+    }
+
     override fun onParkingSizeSet(parkingSize: String) {
         model.setParkingSize(parkingSize.toInt())
         showParkingSizeToast()

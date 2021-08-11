@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">ParkingSystem-Kotlin</string>
     <string name="button_main_configure_parking_size">configure parking size</string>
+    <string name="button_main_parking_reservation">Make a reservation</string>
     <string name="button_dialog_parking_space_set_parking_size">set parking size</string>
     <string name="button_dialog_parking_space_exit_parking_size">exit parking size</string>
+    <string name="button_activity_parking_reservation_set">Reserve</string>
+    <string name="button_activity_parking_reservation_cancel">Cancel</string>
     <string name="title_all_parking_size">Parking Size</string>
+    <string name="title_activity_parking_reservation">Parking Reservation</string>
     <string name="input_dialog_parking_space_hint_insert_number">Insert a number</string>
+    <string name="input_parking_reservation_hint_for_code_insert_number">Insert code for parking slot</string>
+    <string name="input_parking_reservation_hint_for_slot_insert_number">Insert number for parking slot</string>
+    <string name="date_picker_input_parking_reservation_hint_for_initial_date">Enter initial date</string>
+    <string name="date_picker_input_parking_reservation_hint_for_end_date">Enter end date</string>
     <string name="toast_dialog_parking_space_wrong_input_msg">Please, insert a number between 0 and 9999</string>
+    <string name="pattern_for_date_format_all">yyyy-MM-dd HH:mm</string>
 </resources>

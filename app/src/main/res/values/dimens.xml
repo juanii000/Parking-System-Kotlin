@@ -4,4 +4,6 @@
     <dimen name="size_all_title_xbig">35sp</dimen>
     <dimen name="padding_dialog_fragment_xsmall">10dp</dimen>
     <dimen name="size_all_text_on_button_xsmall">12sp</dimen>
+    <dimen name="radius_rounded_edges_normal">25dp</dimen>
+    <dimen name="padding_rounded_edges_small">10dp</dimen>
 </resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+    <TextView
+        android:id="@+id/text_dialog_fragment_parking_size"
+        style="@style/TextStyleParkingReservationActivityTitle"
+        android:text="@string/title_activity_parking_reservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/date_picker_input_parking_reserve_initial_date"
+        style="@style/EditTextStyleParkingReservationActivity"
+        android:autofillHints="none"
+        android:hint="@string/date_picker_input_parking_reservation_hint_for_initial_date"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_dialog_fragment_parking_size" />
+
+    <EditText
+        android:id="@+id/date_picker_input_parking_reserve_end_date"
+        style="@style/EditTextStyleParkingReservationActivity"
+        android:autofillHints="none"
+        android:hint="@string/date_picker_input_parking_reservation_hint_for_end_date"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker_input_parking_reserve_initial_date" />
+
+    <EditText
+        android:id="@+id/input_number_parking_slot"
+        style="@style/EditTextStyleParkingReservationActivity"
+        android:autofillHints="none"
+        android:hint="@string/input_parking_reservation_hint_for_slot_insert_number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker_input_parking_reserve_end_date" />
+
+    <EditText
+        android:id="@+id/input_number_parking_code"
+        style="@style/EditTextStyleParkingReservationActivity"
+        android:autofillHints="none"
+        android:hint="@string/input_parking_reservation_hint_for_code_insert_number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_number_parking_slot" />
+
+    <Button
+        android:id="@+id/button_activity_parking_reservation_cancel"
+        style="@style/ButtonAllBaseStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_activity_parking_reservation_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_number_parking_code" />
+
+    <Button
+        android:id="@+id/button_activity_parking_reservation_set"
+        style="@style/ButtonAllBaseStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_activity_parking_reservation_set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_number_parking_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

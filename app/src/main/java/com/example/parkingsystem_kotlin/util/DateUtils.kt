@@ -48,4 +48,10 @@ object DateUtils {
             true
         ).show()
     }
+
+    fun getInputTypeCalendar(date: String, context: Context?): Calendar {
+        val cal = Calendar.getInstance()
+        cal.time = SimpleDateFormat(context?.getString(R.string.pattern_for_date_format_all), Locale.US).parse(date)
+        return cal
+    }
 }

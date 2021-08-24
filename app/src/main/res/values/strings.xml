@@ -15,4 +15,7 @@
     <string name="date_picker_input_parking_reservation_hint_for_end_date">Enter end date</string>
     <string name="toast_dialog_parking_space_wrong_input_msg">Please, insert a number between 0 and 9999</string>
     <string name="pattern_for_date_format_all">yyyy-MM-dd HH:mm</string>
+    <string name="toast_parking_reservation_activity_date_is_overlapped">The time for the slot that you are trying to reserve is already occupied please select other time</string>
+    <string name="toast_parking_reservation_activity_reservation_success">Reservation complete</string>
+    <string name="toast_parking_reservation_activity_reservation_wrong_time">The end time can\'t be before initial time</string>
 </resources>

@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.text.InputType.TYPE_NULL
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parkingsystem_kotlin.databinding.ActivityParkingReservationBinding
-import com.example.parkingsystem_kotlin.mvp.contract.ParkingReservationActivityContract
-import com.example.parkingsystem_kotlin.mvp.presenter.ParkingReservationActivityPresenter
-import com.example.parkingsystem_kotlin.mvp.view.ParkingReservationActivityView
+import com.example.parkingsystem_kotlin.mvp.contract.ParkingReservationContract
+import com.example.parkingsystem_kotlin.mvp.model.ParkingReservationModel
+import com.example.parkingsystem_kotlin.mvp.presenter.ParkingReservationPresenter
+import com.example.parkingsystem_kotlin.mvp.view.ParkingReservationView
 
 class ParkingReservationActivity : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class ParkingReservationActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityParkingReservationBinding
-    private lateinit var presenter: ParkingReservationActivityContract.Presenter
+    private lateinit var presenter: ParkingReservationContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +28,10 @@ class ParkingReservationActivity : AppCompatActivity() {
             datePickerInputParkingReserveEndDate.inputType = TYPE_NULL
         }
         setContentView(binding.root)
-        presenter = ParkingReservationActivityPresenter(ParkingReservationActivityView(binding, this))
+        presenter = ParkingReservationPresenter(
+            ParkingReservationView(binding, this),
+            ParkingReservationModel()
+        )
         setOnClickListeners()
     }
 

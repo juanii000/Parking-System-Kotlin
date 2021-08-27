@@ -18,4 +18,8 @@
     <string name="toast_parking_reservation_activity_date_is_overlapped">The time for the slot that you are trying to reserve is already occupied please select other time</string>
     <string name="toast_parking_reservation_activity_reservation_success">Reservation complete</string>
     <string name="toast_parking_reservation_activity_reservation_wrong_time">The end time can\'t be before initial time</string>
+    <string name="toast_parking_reservation_activity_reservation_empty_input_slot">You have to enter a slot</string>
+    <string name="toast_parking_reservation_activity_reservation_empty_input_code">You have to enter a code</string>
+    <string name="toast_parking_reservation_activity_reservation_empty_date_field">You have to enter a valid initial and end time</string>
+    <string name="toast_parking_reservation_activity_reservation_invalid_slot">You have to enter a number slot under %1$d </string>
 </resources>

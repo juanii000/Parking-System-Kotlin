@@ -10,12 +10,10 @@ import com.example.parkingsystem_kotlin.mvp.contract.ParkingReservationContract
 import com.example.parkingsystem_kotlin.mvp.model.ParkingReservationModel
 import com.example.parkingsystem_kotlin.mvp.presenter.ParkingReservationPresenter
 import com.example.parkingsystem_kotlin.mvp.view.ParkingReservationView
+import com.example.parkingsystem_kotlin.util.Constants.EXTRA_PARKING_SIZE as EXTRA_PARKING_SIZE
+import com.example.parkingsystem_kotlin.util.Constants.PARKING_SIZE as PARKING_SIZE_DEFAULT
 
 class ParkingReservationActivity : AppCompatActivity() {
-
-    companion object {
-        fun getIntent(context: Context) = Intent(context, ParkingReservationActivity::class.java)
-    }
 
     private lateinit var binding: ActivityParkingReservationBinding
     private lateinit var presenter: ParkingReservationContract.Presenter
@@ -32,6 +30,7 @@ class ParkingReservationActivity : AppCompatActivity() {
             ParkingReservationView(binding, this),
             ParkingReservationModel()
         )
+        presenter.initializeParkingSpace(intent.getIntExtra(EXTRA_PARKING_SIZE, PARKING_SIZE_DEFAULT))
         setOnClickListeners()
     }
 
@@ -45,6 +44,12 @@ class ParkingReservationActivity : AppCompatActivity() {
             datePickerInputParkingReserveEndDate.setOnFocusChangeListener { _, isFocus ->
                 presenter.onPressDatePickerEndDate(isFocus)
             }
+        }
+    }
+
+    companion object {
+        fun getIntent(context: Context, parkingSize: Int) = Intent(context, ParkingReservationActivity::class.java).apply {
+            putExtra(EXTRA_PARKING_SIZE, parkingSize)
         }
     }
 }

@@ -6,7 +6,7 @@ import com.example.parkingsystem_kotlin.R
 import com.example.parkingsystem_kotlin.databinding.DialogFragmentParkingSizeBinding
 import com.example.parkingsystem_kotlin.mvp.contract.ParkingSizeDialogContract
 import com.example.parkingsystem_kotlin.mvp.view.base.FragmentView
-import com.example.parkingsystem_kotlin.util.toast
+import com.example.parkingsystem_kotlin.util.showToast
 
 class ParkingSizeDialogView(fragment: Fragment, private val binding: DialogFragmentParkingSizeBinding) :
     FragmentView(fragment), ParkingSizeDialogContract.ParkingSizeView {
@@ -16,12 +16,12 @@ class ParkingSizeDialogView(fragment: Fragment, private val binding: DialogFragm
     }
 
     override fun showParkingSize(parkingSize: Int) {
-        context?.toast(parkingSize.toString())
+        context?.showToast(parkingSize.toString())
     }
 
     override fun showToastWrongInput() {
         context?.let {
-            it.toast(it.getString(R.string.toast_dialog_parking_space_wrong_input_msg))
+            it.showToast(it.getString(R.string.toast_dialog_parking_space_wrong_input_msg))
         }
     }
 

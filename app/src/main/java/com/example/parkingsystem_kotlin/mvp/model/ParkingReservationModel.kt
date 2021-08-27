@@ -3,9 +3,18 @@ package com.example.parkingsystem_kotlin.mvp.model
 import com.example.parkingsystem_kotlin.database.ParkingReservationDB
 import com.example.parkingsystem_kotlin.database.Reservation
 import com.example.parkingsystem_kotlin.mvp.contract.ParkingReservationContract
+import com.example.parkingsystem_kotlin.util.Constants
 import java.util.Calendar
 
 class ParkingReservationModel : ParkingReservationContract.Model {
+
+    private var parkingSize: Int = Constants.PARKING_SIZE
+
+    override fun setParkingSize(parkingSize: Int) {
+        this.parkingSize = parkingSize
+    }
+
+    override fun getParkingSize(): Int = parkingSize
 
     override fun saveParkingReservationData(slot: Int, code: Int, initialDate: Calendar, endDate: Calendar) {
         val reservation = Reservation(slot, code, initialDate, endDate)

@@ -1,20 +1,20 @@
 package com.example.parkingsystem_kotlin.mvp.contract
 
 interface ParkingContract {
-    interface Presenter{
+    interface Presenter {
         fun onParkingSizeButtonPressed()
         fun onParkingReservationButtonPressed()
         fun onParkingSizeSet(parkingSize: String)
     }
 
-    interface Model{
+    interface Model {
         fun setParkingSize(parkingSize: Int)
         fun getParkingSize(): Int
     }
 
-    interface View{
+    interface View {
         fun showParkingSizeDialogFragment()
-        fun showParkingReservationActivity()
+        fun showParkingReservationActivity(parkingSize: Int)
         fun showParkingSize(parkingSize: Int)
     }
 }

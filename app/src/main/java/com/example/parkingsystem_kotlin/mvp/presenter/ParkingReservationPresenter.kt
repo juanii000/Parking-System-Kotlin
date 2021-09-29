@@ -9,17 +9,27 @@ class ParkingReservationPresenter(
 ) : ParkingReservationContract.Presenter {
 
     override fun onPressButtonActivityParkingReservationSet() {
-        val slot: Int = view.getSlotFromInput().toInt()
-        val code: Int = view.getCodeFromInput().toInt()
-        val initialDate: Calendar = view.getInitialDateFromInput()
-        val endDate: Calendar = view.getEndDateFromInput()
 
         when {
-            model.isCorrectTime(initialDate, endDate).not() -> view.showToastParkingReservationWrongTime()
-            model.isOverlapReservation(slot, initialDate, endDate) -> view.showToastParkingReservationIsOverlapped()
-            model.isOverlapReservation(slot, initialDate, endDate).not() -> {
-                model.saveParkingReservationData(slot, code, initialDate, endDate)
-                view.parkingReservationSuccess()
+            view.getSlotFromInput().isEmpty() -> view.showToastParkingReservationEmptyInputSlot()
+            view.getCodeFromInput().isEmpty() -> view.showToastParkingReservationEmptyInputCode()
+            view.getInitialTimeFromInput().isEmpty() ||
+                    view.getEndTimeFromInput().isEmpty() -> view.showToastParkingReservationEmptyDateField()
+            else -> {
+                val parkingSize = model.getParkingSize()
+                val slot: Int = view.getSlotFromInput().toInt()
+                val code: Int = view.getCodeFromInput().toInt()
+                val initialDate: Calendar = view.getInitialDate(view.getInitialTimeFromInput())
+                val endDate: Calendar = view.getEndDate(view.getEndTimeFromInput())
+                when {
+                    model.isCorrectTime(initialDate, endDate).not() -> view.showToastParkingReservationWrongTime()
+                    model.isOverlapReservation(slot, initialDate, endDate) -> view.showToastParkingReservationIsOverlapped()
+                    slot > parkingSize -> view.showToastParkingReservationInvalidSlot(parkingSize)
+                    else -> {
+                        model.saveParkingReservationData(slot, code, initialDate, endDate)
+                        view.parkingReservationSuccess()
+                    }
+                }
             }
         }
     }
@@ -38,5 +48,9 @@ class ParkingReservationPresenter(
         if (isFocus) {
             view.showDatePickerForEndDate()
         }
+    }
+
+    override fun initializeParkingSpace(parkingSize: Int) {
+        model.setParkingSize(parkingSize)
     }
 }

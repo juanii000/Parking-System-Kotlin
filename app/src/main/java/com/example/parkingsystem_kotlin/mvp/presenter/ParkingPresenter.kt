@@ -13,7 +13,7 @@ class ParkingPresenter(
     }
 
     override fun onParkingReservationButtonPressed() {
-        view.showParkingReservationActivity()
+        view.showParkingReservationActivity(model.getParkingSize())
     }
 
     override fun onParkingSizeSet(parkingSize: String) {
@@ -21,7 +21,7 @@ class ParkingPresenter(
         showParkingSizeToast()
     }
 
-    private fun showParkingSizeToast(){
+    private fun showParkingSizeToast() {
         view.showParkingSize(model.getParkingSize())
     }
 }
